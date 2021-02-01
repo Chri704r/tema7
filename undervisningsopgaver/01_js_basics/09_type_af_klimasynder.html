@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        let timer = 3;
+        let co2UdledtIKgVedFlyrejse = timer * 109;
+
+        let first = (`Ved ${timer} timers flyrejse har du udledt ${co2UdledtIKgVedFlyrejse} kg Co2.`);
+
+        function visBesked(message) {
+            return ` ${first} ${message}`;
+        }
+
+        if (co2UdledtIKgVedFlyrejse < 100) {
+            console.log(visBesked("Tæt på Thunberg."));
+
+        } else if (co2UdledtIKgVedFlyrejse >= 100 && co2UdledtIKgVedFlyrejse <= 200) {
+            console.log(visBesked("Ja ja, du behøver ikke at melde dig ud af Å!"));
+
+        } else if (co2UdledtIKgVedFlyrejse >= 200 && co2UdledtIKgVedFlyrejse <= 600) {
+            console.log(visBesked("Det er godt for turismen i nordeuropa."));
+
+        } else if (co2UdledtIKgVedFlyrejse > 600) {
+            console.log(visBesked("Nå ja vi kan jo altid kolonisere en anden planet ..."));
+        }
+
+    </script>
+</body>
+
+</html>
