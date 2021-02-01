@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title></title>
+</head>
+
+<body>
+
+    <p>Gæt tallet mellem 0 og 20:</p>
+    <input type="text" id="tal">
+    <button>gæt</button>
+
+    <p>Dine antal gæt:</p>
+    <div id="guess">0</div>
+
+    <script>
+        let guess = 0;
+
+        //funktion der laver tilfældigt tal
+
+        function generator() {
+            return Math.floor(Math.random() * 21);
+        }
+
+        let genereretTal = generator();
+
+        document.querySelector("button").addEventListener("click", buttonClick);
+
+        //funktion når man trykker på knappen
+
+        function buttonClick() {
+            let tal = document.querySelector("#tal").value;
+
+            if (tal > genereretTal) {
+                console.log("Tallet er mindre");
+                guess++;
+                document.querySelector("#guess").textContent = guess;
+
+
+            } else if (tal < genereretTal) {
+                console.log("Tallet er større");
+                guess++;
+                document.querySelector("#guess").textContent = guess;
+
+            } else {
+                console.log("Tillykke du har gættet rigtigt");
+                guess++;
+                document.querySelector("#guess").textContent = guess;
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
