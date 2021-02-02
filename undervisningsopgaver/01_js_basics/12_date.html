@@ -9,9 +9,53 @@
 </head>
 
 <body>
+
+    <p>Din alder:</p>
+
+    <input type="text" id="dinAlderTekst">
+
+    <p>Din dates alder:</p>
+
+    <input type="text" id="dinDatesTekst">
+    <button>Går det?</button>
+
     <script>
-        let minAlder = 21;
-        let dateRegel = 21 / 2 + 7;
+        let dinAlder;
+        let dateAlder;
+        let minimumAlder;
+        let maximumAlder;
+
+        document.querySelector("button").addEventListener("click", buttonClick);
+
+        function buttonClick() {
+            dinAlder = document.querySelector("#dinAlderTekst").value;
+            dateAlder = document.querySelector("#dinDatesTekst").value;
+
+            //hvad er det yngste din date må være?
+            minimumAlder = Math.round(dinAlder / 2 + 7);
+
+            maximumAlder = Math.round((dinAlder - 7) * 2);
+
+            console.log("minimumAlder", minimumAlder);
+            console.log("maximumAlder", maximumAlder);
+
+            if (dinAlder < 15 || dateAlder < 15) {
+                console.log("En af parterne er for unge");
+
+            } else {
+
+                if (dateAlder >= minimumAlder && dateAlder <= maximumAlder) {
+                    console.log("Det er passende")
+
+                } else if (dateAlder < minimumAlder) {
+                    console.log(`du er ${dinAlder} og din dates alder er ${dateAlder}. Din date er ${minimumAlder-dateAlder} år for ung`);
+                } else if (dateAlder >= maximumAlder) {
+                    console.log(`du er ${dinAlder} og din dates alder er ${dateAlder}. Din date er ${dateAlder - maximumAlder} år for gammel`);
+                }
+            }
+
+
+        }
 
     </script>
 </body>
