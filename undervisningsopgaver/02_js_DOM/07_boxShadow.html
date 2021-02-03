@@ -77,29 +77,6 @@
         document.querySelector("img:first-child").addEventListener("click", skiftBillede);
 
 
-
-        // --------TILFØJ DROPSHADOW----
-        document.querySelector("article").addEventListener("mouseover", addShadow);
-
-        document.querySelector("article").addEventListener("mouseout", removeShadow);
-
-
-        function addShadow() {
-
-            const article = document.querySelector("article");
-
-            article.classList.add("shadow");
-        }
-
-
-        function removeShadow() {
-            const article = document.querySelector("article");
-            article.classList.remove("shadow");
-        }
-
-
-
-
         function start() {
 
             console.log("dom er loaded");
@@ -180,6 +157,28 @@
             let tekstindhold = document.createTextNode(" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam optio at ab ducimus itaque, laudantium mollitia veritatis assumenda iste culpa quasi molestiae commodi quidem sit accusamus et accusantium, velit ipsum?");
             tekst.appendChild(tekstindhold);
             article.appendChild(tekst);
+
+
+            // --------TILFØJ DROPSHADOW TIL ALLE ARTICELS-------
+
+
+            const allArticles = document.querySelectorAll("article");
+            allArticles.forEach(article => article.addEventListener("mouseover", addShadow));
+            allArticles.forEach(article => article.addEventListener("mouseout", removeShadow));
+
+
+            function addShadow() {
+
+                const article = document.querySelector("article");
+
+                this.classList.add("shadow");
+            }
+
+
+            function removeShadow() {
+                const article = document.querySelector("article");
+                this.classList.remove("shadow");
+            }
 
         }
 
