@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <style>
+        header,
+        footer {
+            border: solid grey 1px;
+            text-align: center;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 20px;
+        }
+
+        article {
+            border: solid grey 1px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        main {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+    </style>
+
+    <header>
+        Titel
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="placeimg_640_480_nature.jpg" alt="billede">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere commodi ipsa aliquid natus quidem repellendus fugit enim exercitationem voluptates doloremque eos repudiandae deleniti, consectetur maxime dignissimos aspernatur, aut deserunt, modi!</p>
+            </article>
+            <article>
+                <img src="placeimg_640_480_nature%20(1).jpg" alt="billede">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere commodi ipsa aliquid natus quidem repellendus fugit enim exercitationem voluptates doloremque eos repudiandae deleniti, consectetur maxime dignissimos aspernatur, aut deserunt, modi!</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        This is the footer
+    </footer>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        document.querySelector("img:first-child").addEventListener("click", skiftBillede);
+
+
+
+
+        function start() {
+
+            console.log("dom er loaded");
+
+
+
+            const titel = document.querySelector("header");
+            console.log(titel);
+
+            titel.textContent = "Dette er en overskrift";
+
+
+            const main = document.querySelector("main");
+            console.log(main);
+
+            const section = document.querySelector("section");
+            console.log(section);
+
+            const underoverskrift = document.querySelector("h2");
+            console.log(underoverskrift);
+
+            const artikel1 = document.querySelector("article:first-child");
+            console.log(artikel1);
+
+            const billede = document.querySelector("img:first-child");
+            console.log(billede);
+
+            billede.src = "hund.jpg";
+            billede.alt = "en hund ud af et vindue"
+
+            const underunderoverskrift = document.querySelector("article h3");
+            console.log(underunderoverskrift);
+
+            underunderoverskrift.textContent = "Smuk solnedgang"
+
+            const brodtekst = document.querySelector("p");
+            console.log(brodtekst);
+
+            brodtekst.textContent = "se det smukke, stille hav og drøm o at være der lige nu. det ville være dejligt";
+
+            const artikel = document.querySelector("article:nth-child(2)");
+            console.log(artikel);
+
+            const billede1 = document.querySelector("article:nth-child(2) img");
+            console.log(billede1);
+
+            billede1.src = "kat.jpg";
+            billede1.alt = "en kat"
+
+            const underunderoverskrift2 = document.querySelector("article:nth-child(2) h3");
+            console.log(underunderoverskrift2);
+
+            underunderoverskrift2.innerHTML = "Den anden solnedgang"
+
+            const brodtekst1 = document.querySelector("article:nth-child(2) p");
+            console.log(brodtekst1);
+
+            brodtekst1.innerHTML = "<br>Dette er også en flot solnedgang over havet men dette billede er anderledes fordi det er til højre på siden imens det andet er på venstre side. jeg kan dog bedst lide det andet billede.</br>"
+
+            const fod = document.querySelector("footer");
+            console.log(fod);
+
+            //---------------
+            let article = document.createElement("article");
+            section.appendChild(article);
+
+            let img = document.createElement("img");
+            img.src = "hav.jpg";
+            article.appendChild(img);
+
+            let h3 = document.createElement("h3");
+            let overskrift = document.createTextNode("Her er endnu en overskrift");
+            h3.appendChild(overskrift);
+            article.appendChild(h3);
+
+            let tekst = document.createElement("p");
+            let tekstindhold = document.createTextNode(" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam optio at ab ducimus itaque, laudantium mollitia veritatis assumenda iste culpa quasi molestiae commodi quidem sit accusamus et accusantium, velit ipsum?");
+            tekst.appendChild(tekstindhold);
+            article.appendChild(tekst);
+
+        }
+
+
+        function skiftBillede() {
+
+            let tilfældigtTal = Math.round(Math.random() * 10);
+            console.log(tilfældigtTal);
+
+            const billede = document.querySelector("img:first-child");
+            console.log(billede);
+
+            billede.src = "https://placeimg.com/640/480/arch" + tilfældigtTal;
+        }
+
+    </script>
+
+</body>
+
+</html>
