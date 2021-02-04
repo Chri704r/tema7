@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <article></article>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+
+            let dyr = {
+                "Navn": "gris",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            }
+
+            console.log(`navn:${dyr.Navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
+
+            const article = document.querySelector("article");
+
+
+            article.innerHTML = `navn:${dyr.Navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+            let img = document.createElement("img");
+            img.src = `${dyr.billede}`;
+            article.appendChild(img);
+
+            img.style.display = "block";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
