@@ -1,0 +1,26 @@
+[{
+    "navn": "gris",
+    "type": "pattedyr",
+    "levested": "svinefarme",
+    "foder": ["tørfoder", "æbler"]
+        }, {
+    "navn": "frø",
+    "type": "amfibie",
+    "levested": "søen",
+    "foder": ["insekter", "bær"]
+        }, {
+    "navn": "ræv",
+    "type": "pattedyr",
+    "levested": "skoven",
+    "foder": ["frugt", "mennesker", "grøntsager"]
+        }, {
+    "navn": "sild",
+    "type": "fisk",
+    "levested": "havet",
+    "foder": ["vand", "fiskefoder", "luft"]
+        }, {
+    "navn": "krokodille",
+    "type": "krybdyr",
+    "levested": "tropisk lavland",
+    "foder": ["fugle", "fisk", "krebsdyr"]
+        }]

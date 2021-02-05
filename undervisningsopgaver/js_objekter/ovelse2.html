@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <section id="liste"></section>
+
+    <template>
+        <section>
+            <h2></h2>
+            <p class="type">Type: </p>
+            <p class="levested">Levested: </p>
+            <p>Foder:</p>
+            <ul class="foderliste"> </ul>
+            <h1></h1>
+        </section>
+    </template>
+
+
+    <script>
+        let listevisning = document.querySelector("#liste");
+        const dyreTemplate = document.querySelector("template");
+
+        const fil = "ovelse2.json";
+        async function hentData(fil) {
+            const resultat = await fetch(fil);
+            const json = await resultat.json();
+            start(json);
+        }
+
+        function start(json) {
+            console.log("DOM er loaded");
+            json.forEach(dyrenavn => {
+                let klon = dyreTemplate.cloneNode(true).content;
+                klon.querySelector("h2").textContent += dyrenavn.navn;
+                klon.querySelector(".type").textContent += dyrenavn.type;
+                klon.querySelector(".levested").textContent += dyrenavn.levested;
+                klon.querySelector("section").style.border = "1px solid grey";
+                klon.querySelector("section").style.margin = "5px";
+
+                dyrenavn.foder.forEach(fode => {
+
+                    klon.querySelector(".foderliste").innerHTML += "<li>" + fode + "</li>";
+                })
+
+                listevisning.appendChild(klon);
+
+
+            })
+        }
+        hentData(fil);
+
+    </script>
+</body>
+
+</html>

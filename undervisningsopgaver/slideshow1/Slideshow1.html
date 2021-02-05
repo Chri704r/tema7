@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+
+    <h1>Tro på det...</h1>
+
+    <img src="img1.png" alt="img1">
+
+    <p>Billeder brugt med tilladelse af Rasmus Bregnhøi</p>
+    <button>Videre</button>
+
+    <script>
+        const allPic = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+        let randomTal = 1;
+
+        document.querySelector("button").addEventListener("click", buttonClick);
+
+        function buttonClick() {
+            console.log("button is clicked");
+
+            let billede = document.querySelector("img");
+            randomTal++;
+            billede.src = `img${randomTal}.png`;
+            billede.alt = `img${randomTal}`;
+            console.log(billede);
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
